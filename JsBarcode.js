@@ -77,6 +77,21 @@
 					}
 
 					ctx.fillText(text, x, y);
+					if(options.price){
+					y = y+options.fontSize * 1.3;
+					
+					ctx.fillText(options.price, x, y);
+					}
+					if(options.product){
+					y = y+options.fontSize * 1.3;
+					
+					ctx.fillText(options.product, x, y);
+					}
+					if(options.storename){
+					y = y+options.fontSize * 1.3;
+					
+					ctx.fillText(options.storename, x, y);
+					}
 				}
 		
 		//Get the canvas context
@@ -86,7 +101,10 @@
 		canvas.width = binary.length*options.width+2*options.quite;
         //Set extra height if the value is displayed under the barcode. Multiplication with 1.3 t0 ensure that some
         //characters are not cut in half
-		canvas.height = options.height + (options.displayValue ? options.fontSize * 1.3 : 0);
+		canvas.height = options.height + (options.displayValue ? options.fontSize * 1.3 : 0)+
+		(options.price ? options.fontSize * 1.3 : 0)+
+		(options.product ? options.fontSize * 1.3 : 0)+
+		(options.storename ? options.fontSize * 1.3 : 0);
 		
 		//Paint the canvas
 		ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -138,7 +156,10 @@
 		textAlign:"center",
 		fontSize: 12,
 		backgroundColor:"",
-		lineColor:"#000"
+		lineColor:"#000",
+		price:"",
+		product:"",
+		storename:""
 	};
 
 	if (window.jQuery) {
