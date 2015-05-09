@@ -11,21 +11,41 @@
 <body>
 	<div>
 	<canvas id="barcode"></canvas>
-		<script>$("#barcode").JsBarcode('12345',{
+	<button type="button" class="btn btn-primary" id="downloadBtn" onclick="downloadLabel();">Download</button>
+	
+
+	
+	
+		<script>
+		var sku=12356;
+		sku = sku.toString();
+		var item ="Selia Bluetooth Printer";
+		
+		$("#barcode").JsBarcode(sku,{
     width:  2,
-    height: 40,
+    height: 30,
     quite: 10,
     format: "CODE128",
     displayValue: true,
     font:"monospace",
-    textAlign:"center",
+    textAlign:"left",
     fontSize: 12,
     backgroundColor:"",
     lineColor:"#000",
     price:"99.00/-",
-		product:"",
+		product:item,
 		storename:"Seliastore.com"
-});</script>
+});
+
+function downloadLabel(){
+var canvas = document.querySelector("canvas");
+var link = document.createElement("a");
+      link.download = sku+" "+item+" Label.png";
+      link.href = canvas.toDataURL();
+      link.click();
+}
+
+</script>
 	</div>
 	
 	

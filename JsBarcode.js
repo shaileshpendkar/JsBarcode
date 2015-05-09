@@ -63,6 +63,10 @@
 					ctx.textBaseline = "bottom";
 					ctx.textBaseline = 'top';
 
+					idAlign = canvas.width / 2;
+					ctx.textAlign = 'center';
+					ctx.fillText(text, idAlign, y);
+				
 					if(options.textAlign == "left"){
 						x = options.quite;
 						ctx.textAlign = 'left';
@@ -76,7 +80,7 @@
 						ctx.textAlign = 'center';
 					}
 
-					ctx.fillText(text, x, y);
+				
 					if(options.price){
 					y = y+options.fontSize * 1.3;
 					

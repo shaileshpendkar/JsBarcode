@@ -69,7 +69,10 @@ JsBarcode(object, string, options);
 	textAlign:"center",
 	fontSize: 12,
 	backgroundColor:"",
-	lineColor:"#000"
+	lineColor:"#000",
+	price:"99.00/-",
+	product:"",
+	storename:"Seliastore.com"
 }
 ````
 
